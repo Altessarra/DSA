@@ -4,19 +4,22 @@ class queue:
     self.array = [None] * limit
     self.rear = -1
     self.front = -1 
-    
+   
+  #isEmpty Operation 
   def empty(self):
     if self.rear == -1 and self.front == -1:
       return True
     else:
       return False
 
+  #isFull Operation
   def full(self):
     if self.rear == self.limit - 1:
       return True
     else:
       return False
   
+  #Enqueue Operation  
   def enqueue(self, data):
     if self.full():
       print("Queue is full")
@@ -31,6 +34,7 @@ class queue:
       self.array[self.rear] = data
       print(f"{data} is enqueued")
   
+  #Dequeue Operation
   def dequeue(self):
     if self.empty():
         print("Queue is empty")
@@ -48,6 +52,7 @@ class queue:
     print(f"{removed} is dequeued")
     return removed
 
+  #Peek Operation
   def peek(self):
     if self.empty():
       print("Queue is empty")
